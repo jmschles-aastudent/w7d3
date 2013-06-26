@@ -24,16 +24,15 @@ J.Views.PostShowView = Backbone.View.extend({
 	},
 
 	editBody: function() {
-		var body = $('div.body').text();
-		$('div.body').empty();
-		$('div.body').html("<textarea class='body_input'>" + body + "</textarea>");
+		var body = $('p').text();
+		$('p').empty();
+		$('p').html("<textarea class='body_input'>" + body + "</textarea>");
 	},
 
 	saveTitle: function() {
 		var that = this;
 
 		var newTitle = $('input.title_input').val();
-		console.log(newTitle);
 
 		var $h2 = $('h2');
 		$h2.empty();
@@ -46,10 +45,10 @@ J.Views.PostShowView = Backbone.View.extend({
 	saveBody: function() {
 		var that = this;
 
-		var newBody = $('input.body_input').text();
+		var newBody = $('textarea.body_input').val();
 
-		$('div.body').empty();
-		$('div.body').text(newBody);
+		$('p').empty();
+		$('p').text(newBody);
 
 		that.model.set({ body: newBody });
 		that.model.save();
