@@ -19,9 +19,8 @@ J.Routers.PostsRouter = Backbone.Router.extend({
 	new: function() {
 		var that = this;
 
-		console.log("HELLO");
-
 		var newPostFormView = new J.Views.NewPostFormView({
+			model: new J.Models.Post,
 			collection: that.posts
 		});
 

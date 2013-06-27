@@ -13,20 +13,25 @@ J.Views.NewPostFormView = Backbone.View.extend({
 		return that;
 	},
 
-	submit: function() {
-		var that = this;
-		var title = $('input#post_title').val();
-		var body = $('textarea#post_body').val();
+	submit: function(event) {
+		event.preventDefault();
 
-		var savedModel = that.collection.create({
-			title: title,
-			body: body
-		}, {wait: true,
-			success: function() {
+		var that = this;
+		// var title = $('input#post_title').val();
+// 		var body = $('textarea#post_body').val();
+		var attrs = $('form').serializeJSON();
+		console.log(attrs);
+
+		// var newModel = that.model.set(attrs);
+		that.model.save(attrs,
+		{wait: true,
+			success: function(model) {
+			console.log('IM HERE');
+			that.collection.add(model);
 			Backbone.history.navigate('#', {trigger: true});
 		},
 			error: function() {
-				console.log($('h1'));
+				console.log("here");
 				var $p = $('<p>').text("You blew it");
 				$('h2').append($p);
 		}});

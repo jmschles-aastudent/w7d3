@@ -15,7 +15,6 @@ J.Views.PostsListView = Backbone.View.extend({
 
 	render: function() {
 		var that = this;
-		console.log(that.collection);
 
 		var renderedContent = JST["posts/list"]({
 			posts: that.collection
@@ -29,11 +28,11 @@ J.Views.PostsListView = Backbone.View.extend({
 	deletePost: function(event){
 		var that = this;
 
-		var postId = $(event.target).data('id')
+		var postId = $(event.target).data('id');
 		var model = that.collection.find(function(post){
 			return post.get('id') === parseInt(postId);
-		})
-
+		});
+		console.log(model);
 		model.destroy();
 
 	}
