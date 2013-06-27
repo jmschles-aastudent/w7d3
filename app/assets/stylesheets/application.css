@@ -14,6 +14,12 @@
 
 #header {
 	text-align: center;
+	border: 5px inset #555;
+	border-radius: 5px;
+	margin-bottom: 10px;
+	background-color: #AAA;
+	letter-spacing: 5px;
+	font-style: small;
 }
 
 #sidebar {
