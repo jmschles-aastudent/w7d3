@@ -12,6 +12,10 @@
  *= require_tree .
  */
 
+#header {
+	text-align: center;
+}
+
 #sidebar {
 	float: left;
 	width: 200px;
