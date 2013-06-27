@@ -12,6 +12,10 @@
  *= require_tree .
  */
 
+.container {
+	height: 300px;
+}
+
 #header {
 	text-align: center;
 	border: 5px inset #555;
@@ -25,10 +29,11 @@
 #sidebar {
 	float: left;
 	width: 200px;
-	border: 1px solid #AAA;
+	height: 100%;
+	border: 3px outset #98B2BC;
 	border-radius: 5px;
 	text-align: center-left;
-	background-color: #CCC;
+	background-color: #BAD4DE;
 	padding: 20px;
 	font-family: georgia;
 }
@@ -39,9 +44,11 @@
 
 #content {
 	width: 350px;
-	float: left;
+	height: 100%;
+	float: right;
 	margin-left: 40px;
-	border: 1px solid #000;
+	border: 3px outset #D0A3A3;
+	background-color: #F0C5C5;
 	border-radius: 5px;
 	padding: 20px;
 	text-align: center;
