@@ -6,6 +6,14 @@ J.Views.PostShowView = Backbone.View.extend({
 		"blur .body_input": "saveBody"
 	},
 
+	initialize: function() {
+		var that = this;
+
+		that.listenTo(that.model, "destroy", function(){
+			Backbone.history.navigate('#', {trigger: true});
+		});
+	},
+
 	render: function() {
 		var that = this;
 
@@ -38,8 +46,8 @@ J.Views.PostShowView = Backbone.View.extend({
 		$h2.empty();
 		$h2.text(newTitle);
 
-		that.model.set({ title: newTitle });
-		that.model.save();
+		console.log(newTitle);
+		that.model.save({ post: {title: newTitle }});
 	},
 
 	saveBody: function() {
@@ -50,7 +58,7 @@ J.Views.PostShowView = Backbone.View.extend({
 		$('p').empty();
 		$('p').text(newBody);
 
-		that.model.set({ body: newBody });
+		that.model.set({ post: {body: newBody }});
 		that.model.save();
 	}
 })

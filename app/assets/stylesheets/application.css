@@ -11,3 +11,35 @@
  *= require_self
  *= require_tree .
  */
+
+#sidebar {
+	float: left;
+	width: 200px;
+	border: 1px solid #AAA;
+	border-radius: 5px;
+	text-align: center-left;
+	background-color: #CCC;
+	padding: 20px;
+	font-family: georgia;
+}
+
+#sidebar ul {
+	list-style: none;
+}
+
+#content {
+	width: 350px;
+	float: left;
+	margin-left: 40px;
+	border: 1px solid #000;
+	border-radius: 5px;
+	padding: 20px;
+	text-align: center;
+	font-family: courier;
+}
+
+button {
+	background-color: #500;
+	border-radius: 5px;
+	color: #FFF;
+}
